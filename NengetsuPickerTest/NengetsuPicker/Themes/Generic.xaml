@@ -1,0 +1,92 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:NengetsuPicker">
+   
+    <Style TargetType="{x:Type local:NengetsuControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:NengetsuControl}">
+                    <Border Background="Transparent">
+                        <StackPanel x:Name="PART_StackPanel">
+                            <Grid Name="SimpleLabelGrid">
+                                <Label Name="YearLabel" HorizontalAlignment="Left" VerticalAlignment="Center" Background="Transparent" FontFamily="{TemplateBinding FontFamily}"/>
+                            </Grid>
+                            <Grid Name="RichLabelGrid">
+                                <Border BorderBrush="#FF808F9D" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Name="Rich_YearLabel" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Background="Transparent" FontFamily="{TemplateBinding FontFamily}"/>
+                                        <Button Name="SelectButton" Grid.Column="1" Content="Select" Height="23" Width="50" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Popup Name="Popup" Width="200">
+                                <Border Background="{TemplateBinding Background}" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid  >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30"/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="30"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Image Name="ForeYearButton" Grid.Column="0" Width="20" Source="/NengetsuPicker;component/LeftArrow.png" />
+                                            <Label Name="ChangeYearLabel" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="{TemplateBinding FontFamily}"/>
+
+                                            <Image Name="NextYearButton" Grid.Column="2" Width="20" Source="/NengetsuPicker;component/RightArrow.png"/>
+                                        </Grid>
+
+                                        <Grid Grid.Row="1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <Button Name="Month_Button1" Content="1月" Grid.Column="0" Grid.Row="0" Margin="2"/>
+                                            <Button Name="Month_Button2" Content="2月" Grid.Column="1" Grid.Row="0" Margin="2"/>
+                                            <Button Name="Month_Button3" Content="3月" Grid.Column="2" Grid.Row="0" Margin="2"/>
+
+                                            <Button Name="Month_Button4" Content="4月" Grid.Column="0" Grid.Row="1" Margin="2"/>
+                                            <Button Name="Month_Button5" Content="5月" Grid.Column="1" Grid.Row="1" Margin="2"/>
+                                            <Button Name="Month_Button6" Content="6月" Grid.Column="2" Grid.Row="1" Margin="2"/>
+
+                                            <Button Name="Month_Button7" Content="7月" Grid.Column="0" Grid.Row="2" Margin="2"/>
+                                            <Button Name="Month_Button8" Content="8月" Grid.Column="1" Grid.Row="2" Margin="2"/>
+                                            <Button Name="Month_Button9" Content="9月" Grid.Column="2" Grid.Row="2" Margin="2"/>
+
+                                            <Button Name="Month_Button10" Content="10月" Grid.Column="0" Grid.Row="3" Margin="2"/>
+                                            <Button Name="Month_Button11" Content="11月" Grid.Column="1" Grid.Row="3" Margin="2"/>
+                                            <Button Name="Month_Button12" Content="12月" Grid.Column="2" Grid.Row="3" Margin="2"/>
+
+                                        </Grid>
+
+                                        <Button Grid.Row="2" Name="CancelButton" Content="キャンセル" Grid.Column="1" Height="25" Width="50" FontSize="10" FontFamily="{TemplateBinding FontFamily}"/>
+                                        
+                                    </Grid>
+                                </Border>
+                            </Popup>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

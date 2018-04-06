@@ -1,0 +1,33 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NengetsuPickerTest"
+        xmlns:NengetsuPicker="clr-namespace:NengetsuPicker;assembly=NengetsuPicker" x:Class="NengetsuPickerTest.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="262.606" Width="350"
+    Loaded="Window_Loaded">
+
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+    
+    <StackPanel>
+        <GroupBox Header="Simple" Margin="10">
+            <StackPanel>
+                <TextBox Text="{Binding Nengetsu1}"/>
+                <!-- Simpleは年月をクリックでポップアップ -->
+                <NengetsuPicker:NengetsuControl IsSimple="True" IsEnabled="True" SelectedItem="{Binding Nengetsu1,Mode=TwoWay}" Grid.Row="0"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Normal" Margin="10">
+            <StackPanel>
+                <TextBox Text="{Binding Nengetsu2}"/>
+                <NengetsuPicker:NengetsuControl IsEnabled="True" SelectedItem="{Binding Nengetsu2,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Grid.Row="1"/>
+            </StackPanel>
+        </GroupBox>
+        
+    </StackPanel>
+</Window>
