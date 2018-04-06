@@ -18,14 +18,14 @@
             <StackPanel>
                 <TextBox Text="{Binding Nengetsu1}"/>
                 <!-- Simpleは年月をクリックでポップアップ -->
-                <NengetsuPicker:NengetsuControl IsSimple="True" IsEnabled="True" SelectedItem="{Binding Nengetsu1,Mode=TwoWay}" Grid.Row="0"/>
+                <NengetsuPicker:NengetsuControl IsSimple="True" IsEnabled="True" SelectedItem="{Binding Nengetsu1,Mode=TwoWay}"/>
             </StackPanel>
         </GroupBox>
 
         <GroupBox Header="Normal" Margin="10">
             <StackPanel>
                 <TextBox Text="{Binding Nengetsu2}"/>
-                <NengetsuPicker:NengetsuControl IsEnabled="True" SelectedItem="{Binding Nengetsu2,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Grid.Row="1"/>
+                <NengetsuPicker:NengetsuControl IsEnabled="True" SelectedItem="{Binding Nengetsu2,Mode=TwoWay}" />
             </StackPanel>
         </GroupBox>
         
